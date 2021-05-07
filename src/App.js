@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+/* eslint-disable no-unused-vars */
+import { useEffect , useState } from "react"
+import Header from "./components/Header"
+import Content from "./components/Content"
 
-function App() {
+const App = () => {
+  const [totalTime, setTotalTime] = useState(10)
+  const [timer, setTimer] = useState(totalTime)
+  const [taps, setTaps] = useState(50)
+
+  // Timer countdown
+  useEffect(() => {
+    timer > 0 && setTimeout(() => setTimer(timer - 1), 1000)
+  }, [timer])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <Header title={"Streaming Performance Calculator"} />
+      <Content time={timer} totalTime={totalTime} taps={taps} />
+
     </div>
   );
 }
 
 export default App;
+
+    /*
+    Container
+      Header
+        ModeButton
+        ModePanel
+        SettingsButton
+      Content
+        StatsPanel
+        StreamRoom
+          StreamButton
+        SettingsPanel
+      Footer
+    */
