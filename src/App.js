@@ -13,7 +13,6 @@ const defaultValues = {
 
 const App = () => {
   const settingValues = Object.create(defaultValues)
-  settingValues.testTime = 20
 
   const [totalTime, setTotalTime] = useState(settingValues.testTime)
   const [timer, setTimer] = useState(totalTime)
