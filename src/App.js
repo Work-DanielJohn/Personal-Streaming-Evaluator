@@ -6,12 +6,13 @@ import Content from "./components/Content"
 const App = () => {
   const [totalTime, setTotalTime] = useState(10)
   const [timer, setTimer] = useState(totalTime)
-  const [taps, setTaps] = useState(0);
+  const [start, setStart] = useState(false)
+  const [taps, setTaps] = useState(0)
 
   // Timer countdown
   useEffect(() => {
-    timer > 0 && setTimeout(() => setTimer(timer - 1), 1000)
-  }, [timer])
+    timer > 0 && start === true && setTimeout(() => setTimer(timer - 1), 1000)
+  }, [timer, start])
   
   // Add tap
   const addTap = useCallback(
@@ -20,9 +21,13 @@ const App = () => {
       
       // z || x
       if (key === 'z' || key === 'x') {
+        if (start === false) {
+          setStart(true)
+          setTimer(timer - 1)
+        }
         timer > 0 && setTaps(taps + 1)
       }
-    }, [taps, timer])
+    }, [taps, timer, start])
 
   useEffect(() => {
     window.addEventListener("keyup", addTap)
