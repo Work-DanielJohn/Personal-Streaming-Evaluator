@@ -1,4 +1,3 @@
-import { useState } from "react"
 import StatsPanel from "./StatsPanel"
 
 const Content = ({ time, totalTime, taps }) => {
