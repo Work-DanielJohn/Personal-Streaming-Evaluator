@@ -9,9 +9,17 @@ const App = () => {
   const [start, setStart] = useState(false)
   const [taps, setTaps] = useState(0)
 
+  // Default settings
+  const defaultValues = {
+    testTime: 10,
+    leftKey: 'z',
+    rightKey: 'x',
+    streamFreq: 4, // 1 beat for every 1 semi-quaver. If 1, then it's per quaver
+  }
+
   // Timer countdown
   useEffect(() => {
-    timer > 0 && start === true && setTimeout(() => setTimer(timer - 1), 1000)
+    (timer > 0) && (start === true) && setTimeout(() => setTimer(timer - 1), 1000)
   }, [timer, start])
   
   // Add tap

@@ -4,7 +4,8 @@ const StatsPanel = ({ time, totalTime, taps }) => {
     return (
         <div>
             Time remaining: {time} <br></br>
-            Avg streaming speed (bps): {averageStream}
+            Avg streaming speed (taps/sec): {averageStream} <br></br>
+            Song bpm: {averageStream * 16}
         </div>
     )
 }
