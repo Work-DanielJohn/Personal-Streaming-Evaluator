@@ -29,17 +29,16 @@ const App = () => {
   // Add tap
   const addTap = useCallback(
     (event) => {
-      const { key, keyCode } = event;
+      const { key } = event;
       
-      // z || x
-      if (key === 'z' || key === 'x') {
+      if (key === settingValues.leftKey || key === settingValues.rightKey) {
         if (start === false) {
           setStart(true)
           setTimer(timer - 1)
         }
         timer > 0 && setTaps(taps + 1)
       }
-    }, [taps, timer, start])
+    }, [settingValues, taps, timer, start])
 
   useEffect(() => {
     window.addEventListener("keyup", addTap)
