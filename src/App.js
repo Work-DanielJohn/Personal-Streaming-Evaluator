@@ -34,7 +34,6 @@ const App = () => {
       if (key === settingValues.leftKey || key === settingValues.rightKey) {
         if (start === false) {
           setStart(true)
-          setTimer(timer - 1)
         }
         timer > 0 && setTaps(taps + 1)
       }
