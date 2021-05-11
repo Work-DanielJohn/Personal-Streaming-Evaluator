@@ -1,9 +1,9 @@
 import StatsPanel from "./StatsPanel"
 
-const Content = ({ time, totalTime, taps }) => {
+const Content = ({ time, settings, totalTime, taps }) => {
     return (
         <div>
-            <StatsPanel time={time} totalTime = {totalTime} taps={taps} />
+            <StatsPanel time={time} settings={settings} totalTime={totalTime} taps={taps} />
         </div>
     )
 }
