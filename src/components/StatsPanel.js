@@ -7,7 +7,8 @@ const StatsPanel = ({ time, settings, totalTime, taps }) => {
         <div>
             Time remaining: {time/settings.timeMultiplier} <br></br>
             Time elapsed: {(totalTime - time) / settings.timeMultiplier} <br></br>
-            Avg streaming speed (taps/sec): { averageStream} <br></br>
+            Avg streaming speed (taps/sec): {isNaN(averageStream) || !isFinite(averageStream) ? "0"
+            : Math.round(settings.timeMultiplier * averageStream) / settings.timeMultiplier} <br></br>
             Song bpm: {Math.round(settings.timeMultiplier * songBPM) / settings.timeMultiplier} <br></br>
             Taps: {taps}
         </div>
