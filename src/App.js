@@ -4,8 +4,8 @@ import Content from "./components/Content"
 
 // Default settings
 const defaultSettings = {
-  testTime: 10,         // 10 seconds
-  timeMultiplier: 10,   // 1dp accuracy (multiplier / 10 = dp)
+  testTime: 15,         // 15 seconds
+  timeMultiplier: 1,   // 1dp accuracy (multiplier / 10 = dp)     !!! - This is inaccurate, fix later 
   leftKey: 'z',
   rightKey: 'x',
   streamFreq: 4,        // Frequency of 4: 1 tap per semi-quaver. Freq of 1: 1 tap per quaver.
@@ -50,7 +50,7 @@ const App = () => {
 
   // Reset
   const reset = () => {
-    setTimer(100)
+    setTimer(totalTime)
     setStart(false)
     setTaps(0)
   }
