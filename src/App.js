@@ -75,17 +75,17 @@ Container
     ModeButton
     ModePanel
     SettingsButton
-  Content
+  SettingsPanel
+  Burst
     StatsPanel
-    StreamRoom
-      StreamButton
-    SettingsPanel
+  Deathstream
   Footer
 */
 
 // Uso! Modes:
 /*
 • Deathstream       - Build your endurance by tapping as many times as you can within a time limit!
+              or    - Build your endurance by maintaining a tapping rhythm for as long as you can! 
 • Burst mode        - Test your speed by tapping a number of times as fast as possible!
 • Tracking mode     - Track and stream as the circle moves across the map before you run out of life!
 • Freestyle         - Tap to the rhythm of any song you like with customisable hit sounds!
