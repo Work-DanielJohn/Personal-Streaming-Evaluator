@@ -16,6 +16,8 @@ const mode = "Burst mode"
 const App = () => {
   const settings = Object.create(defaultSettings)
 
+  // settings.leftKey = "c" <-- Changes settings, not defaultSettings (defaults can be reused)
+
   const totalTime = settings.testTime
   const [timer, setTimer] = useState(totalTime)
   const [start, setStart] = useState(false)
@@ -59,7 +61,7 @@ const App = () => {
 
   return (
     <div className="container">
-      <Header title={"Streaming Performance Calculator"} />
+      <Header />
       <Burst title={mode} time={timer} settings={settings} totalTime={totalTime} taps={taps} />
       <button onClick={reset} disabled={timer!==0}>Reset</button>
     </div>
