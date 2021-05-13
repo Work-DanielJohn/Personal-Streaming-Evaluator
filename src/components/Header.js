@@ -1,15 +1,9 @@
 const Header = ({ title }) => {
     return (
         <header>
-            <div class="innerHeader">
-                <div class="title">
-                    <h1>{title}</h1>
-                </div>
-                <ul class="menuOptions">
-                    <button><li>Modes <i class="fas fa-gamepad"></i> </li></button>
-                    <button><li>Settings <i class="fas fa-cog"></i> </li></button>
-                </ul>
-            </div>
+            <button title="Streaming Modes"><i class="fas fa-2x fa-gamepad"></i></button>
+            <h1 title="Click those circles!">PERS<span>O</span>NAL <span>S</span>TREAMING EVAL<span>U</span>ATOR<span>!</span></h1>
+            <button title="Settings"><i class="fas fa-2x fa-cog"></i></button>
         </header>
     )
 }

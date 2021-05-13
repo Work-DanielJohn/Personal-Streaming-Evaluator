@@ -17,40 +17,26 @@ Header {
     height: 80px;
     display: block;
     user-select: none;
-}
-
-.innerHeader {
-    background-color: #1ea064;
-    width: 1000px;
-    height: 100%;
-    display: block;
-    margin: 0 auto;
-}
-
-.title {
-    height: 100%;
     display: table;
-    float: left;
 }
 
-.title h1 {
-    height: 100%;
+Header h1 {
+    width: 100%;
     color: white;
     display: table-cell;
     vertical-align: middle;
 }
 
-.menuOptions {
-    height: 100%;
-    float: right;
+Header h1 span:hover {
+    color: #e15e99;
+    transition: 0.4s;
 }
 
-.menuOptions button {    
+Header button {
+    display: table; 
     height: 100%;
-    display: table;
-    float: left;
-    padding: 0px 15px;
-    margin-left: 20px;
+    padding: 0px 35px;
+    margin: 0 20px;
     font-size: large;
     border: white;
     color: white;
@@ -59,13 +45,8 @@ Header {
     transition: 0.3s;
 }
 
-.menuOptions button:hover {
+Header button:hover {
     background-color: #28be78;
-}
-
-.menuOptions button li {
-    display: table-cell;
-    vertical-align: middle;
 }
 
 body {
