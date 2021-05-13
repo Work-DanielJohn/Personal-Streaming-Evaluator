@@ -8,9 +8,9 @@ const StatsPanel = ({ time, settings, totalTime, taps }) => {
             Time remaining: {time} <br></br>
             Time elapsed: {totalTime - time} <br></br>
             Avg streaming speed (taps/sec): {isNaN(averageStream) || !isFinite(averageStream)
-                ? "0" : averageStream} <br></br>
+                ? "0" : averageStream.toFixed(2)} <br></br>
             Song bpm: {isNaN(songBPM) || !isFinite(songBPM)
-                ? "0" : songBPM} <br></br>
+                ? "0" : songBPM.toFixed(2)} <br></br>
             Taps: {taps < 0 ? "0" : taps}
         </div>
     )
