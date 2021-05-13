@@ -10,6 +10,9 @@
 
 Header {
     background-color: #1ea064;
+    border: #28be78;
+    border-top-style: solid;
+    border-bottom-style: solid;
     width: 100%;
     height: 80px;
     display: block;
