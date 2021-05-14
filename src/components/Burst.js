@@ -21,7 +21,7 @@ const Burst = ({ title, time, settings, totalTime, taps, reset }) => {
                     <button onClick={closeHelp}>Back</button>
                     <p>
                         Press the <b>{settings.leftKey}</b> and <b>{settings.rightKey}</b> buttons as fast as you can! <br></br>
-                        You have <b>{time}</b> seconds to test your streaming speed. <br></br>
+                        You have <b>{totalTime}</b> seconds to test your streaming speed. <br></br>
                         <br></br>
                         The test <b>duration</b> and tapping <b>keys</b> can be customised in the <b>settings</b> menu. <br></br>
                         <br></br>
