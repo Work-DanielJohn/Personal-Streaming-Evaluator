@@ -45,7 +45,7 @@ Header h1 span:hover {
 Header button {
     display: table; 
     height: 100%;
-    padding: 0px 35px;
+    padding: 0px 20px;
     margin: 0 20px;
     font-size: large;
     border: white;
