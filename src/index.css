@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Allerta&display=swap');
 
+:root {
+	--dark-green: #1e8c5a;
+	--light-green: #28b46e;
+	--uso-pink: #e15e99;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -9,8 +15,8 @@
 }
 
 Header {
-    background-color: #1ea064;
-    border: #28be78;
+    background-color: var(--dark-green);
+    border: var(--light-green);
     border-top-style: solid;
     border-bottom-style: solid;
     width: 100%;
@@ -28,7 +34,7 @@ Header h1 {
 }
 
 Header h1 span:hover {
-    color: #e15e99;
+    color: var(--uso-pink);
     transition: 0.4s;
 }
 
@@ -46,7 +52,7 @@ Header button {
 }
 
 Header button:hover {
-    background-color: #28be78;
+    background-color: var(--light-green);;
 }
 
 body {
@@ -54,3 +60,38 @@ body {
     font-family: 'Allerta', sans-serif;
 }
 
+.underline {
+	text-decoration: underline;
+}
+
+.burstTable {
+	width: 70%;
+	margin: 0 15%;
+	margin-top: 10px;
+	color: white;
+	border-collapse: collapse;
+}
+
+.burstTable table, th, td {
+	border: 2px solid black;
+}
+
+.burstTable tr td {
+	padding: 10px 20px;
+}
+
+.burstTable tr td:first-child {
+	text-align: right;
+}
+
+.burstTable tr td:nth-child(2) {
+	text-align: left;
+}
+
+.burstTable tr:nth-child(odd) {
+	background-color: var(--light-green);;
+}
+
+.burstTable tr:nth-child(even) {
+	background-color: var(--dark-green);;
+}

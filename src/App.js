@@ -62,8 +62,7 @@ const App = () => {
   return (
     <div className="container">
       <Header />
-      <Burst title={mode} time={timer} settings={settings} totalTime={totalTime} taps={taps} />
-      <button onClick={reset} disabled={timer!==0}>Reset</button>
+      <Burst title={mode} time={timer} settings={settings} totalTime={totalTime} taps={taps} reset={reset}/>
     </div>
   );
 }
