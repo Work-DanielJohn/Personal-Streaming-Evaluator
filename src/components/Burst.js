@@ -35,8 +35,8 @@ const Burst = ({ title, time, settings, totalTime, taps, reset }) => {
                                 <td>How many seconds remain/have passed since starting.</td>
                             </tr>
                             <tr>
-                                <td>Streaming Speed</td>
-                                <td>This is how many taps you make per second.</td>
+                                <td>Speed</td>
+                                <td>The average frequency of taps per second.</td>
                             </tr>
                             <tr>
                                 <td>Song BPM</td>
