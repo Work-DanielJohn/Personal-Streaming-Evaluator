@@ -1,5 +1,6 @@
 import { useEffect , useState, useCallback } from "react"
 import Header from "./components/Header"
+import Settings from "./components/Settings"
 import Burst from "./components/Burst"
 
 // Default settings
@@ -62,7 +63,8 @@ const App = () => {
   return (
     <div className="container">
       <Header />
-      <Burst title={mode} time={timer} settings={settings} totalTime={totalTime} taps={taps} reset={reset}/>
+      <Settings />
+      <Burst title={mode} time={timer} settings={settings} totalTime={totalTime} taps={taps} reset={reset} start={start}/>
     </div>
   );
 }
