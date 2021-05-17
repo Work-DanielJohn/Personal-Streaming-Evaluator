@@ -83,8 +83,8 @@ button {
 }
 
 .burstTable {
-	width: 70%;
-	margin: 0 15%;
+	width: 80%;
+	margin: 0 10%;
 	margin-top: 10px;
 	color: white;
 	border-collapse: collapse;
@@ -95,21 +95,14 @@ button {
 }
 
 .burstTable tr td {
-	padding: 10px 20px;
-}
-
-.burstTable tr td:first-child {
-	text-align: right;
-}
-
-.burstTable tr td:nth-child(2) {
-	text-align: left;
+	padding: 15px 15px;
 }
 
 .burstTable tr:nth-child(odd) {
-	background-color: var(--light-green);;
+	background-color: var(--light-green);
 }
 
 .burstTable tr:nth-child(even) {
-	background-color: var(--dark-green);;
+	background-color: var(--dark-green);
+    text-align: left;
 }

@@ -12,17 +12,17 @@ const defaultSettings = {
   streamFreq: 4,        // Frequency of 4: 1 tap per semi-quaver. Freq of 1: 1 tap per quaver.
 }
 
-const mode = "Burst mode"
-
 const App = () => {
   const settings = Object.create(defaultSettings)
-
-  // settings.leftKey = "c" <-- Changes settings, not defaultSettings (defaults can be reused)
-
   const totalTime = settings.testTime
   const [timer, setTimer] = useState(totalTime)
-  const [start, setStart] = useState(false)
+  const [start, setStart] = useState(false)       // Boolean for if game is running
+  const [ready, setReady] = useState(true)        // Boolean to prevent game starting in other menus
   const [taps, setTaps] = useState(-1)            // Costs one tap to start ;)
+
+  const toggleSettings = () => {
+    alert("settings")
+  }
 
   // Timer countdown
   useEffect(() => {
@@ -35,14 +35,15 @@ const App = () => {
   const addTap = useCallback(
     (event) => {
       const { key } = event;
-      
-      if (key === settings.leftKey || key === settings.rightKey) {
-        if (start === false) {
-          setStart(true)
+      if (ready) {
+        if (key === settings.leftKey || key === settings.rightKey) {
+          if (start === false) {
+            setStart(true)
+          }
+          timer > 0 && setTaps(taps + 1)
         }
-        timer > 0 && setTaps(taps + 1)
       }
-    }, [settings, taps, timer, start]
+    }, [settings, taps, timer, start, ready]
   )
   
   // Keyboard event manager
@@ -53,7 +54,12 @@ const App = () => {
     }
   }, [addTap])
 
-  // Reset
+  // Prevent test starting in wrong window
+  const toggleReady = () => {
+    setReady(!ready)
+  }
+
+  // Reset test to starting conditions
   const reset = () => {
     setTimer(totalTime)
     setStart(false)
@@ -61,10 +67,10 @@ const App = () => {
   }
 
   return (
-    <div className="container">
-      <Header />
+    <div className="container"></div>
+      <Header toggle={toggleSettings} />
       <Settings />
-      <Burst title={mode} time={timer} settings={settings} totalTime={totalTime} taps={taps} reset={reset} start={start}/>
+      <Burst time={timer} settings={settings} totalTime={totalTime} taps={taps} reset={reset} start={start} ready={toggleReady}/>
     </div>
   );
 }
