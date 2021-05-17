@@ -1,7 +1,7 @@
 import { useState } from "react"
 import StatsPanel from "./StatsPanel"
 
-const Burst = ({ title, time, settings, totalTime, taps, reset }) => {
+const Burst = ({ title, time, settings, totalTime, taps, reset, start }) => {
     const [help, setHelp] = useState(false)
     
     const closeHelp = () => {
@@ -12,7 +12,7 @@ const Burst = ({ title, time, settings, totalTime, taps, reset }) => {
         <div>
             <h2>{title}</h2>
             { !help && <>
-                <button onClick={setHelp}> Help <i class="far fa-question-circle"></i> </button>
+                <button onClick={setHelp} disabled={start}> Help <i class="far fa-question-circle"></i> </button>
                 <StatsPanel time={time} settings={settings} totalTime={totalTime} taps={taps} /> 
                 <button onClick={reset} disabled={time!==0}>Reset <i class="fas fa-undo"></i> </button> </>
             }
