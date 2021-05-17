@@ -5,7 +5,7 @@ import Burst from "./components/Burst"
 // Default settings
 const defaultSettings = {
   testTime: 15,         // 15 seconds
-  timeMultiplier: 1,   // 1dp accuracy (multiplier / 10 = dp)     !!! - This is inaccurate, fix later 
+  timeMultiplier: 1,    // 1dp accuracy (multiplier / 10 = dp)     !!! - This is inaccurate, fix later 
   leftKey: 'z',
   rightKey: 'x',
   streamFreq: 4,        // Frequency of 4: 1 tap per semi-quaver. Freq of 1: 1 tap per quaver.
