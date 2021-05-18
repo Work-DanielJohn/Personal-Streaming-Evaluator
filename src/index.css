@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Allerta&display=swap');
 
 :root {
-	--dark-green: #1e8c5a;
-	--light-green: #28b46e;
-	--uso-pink: #e15e99;
+	--dark-green: #197855;
+	--light-green: #23965a;
+	--uso-pink: #e985b0;
 }
 
 * {
@@ -100,6 +100,7 @@ button {
 
 .burstTable tr:nth-child(odd) {
 	background-color: var(--light-green);
+    font-size: larger;
 }
 
 .burstTable tr:nth-child(even) {
