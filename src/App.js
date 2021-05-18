@@ -70,7 +70,7 @@ const App = () => {
     <div className="container">
       <Header toggle={toggleSettings} />
       <Settings />
-      <Burst time={timer} settings={settings} totalTime={totalTime} taps={taps} reset={reset} start={start} ready={toggleReady}/>
+      {false && <Burst time={timer} settings={settings} totalTime={totalTime} taps={taps} reset={reset} start={start} ready={toggleReady}/>}
     </div>
   );
 }
