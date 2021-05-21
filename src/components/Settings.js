@@ -1,6 +1,7 @@
 const Settings = () => {
     return (
-        <div>
+        // make settings component position relative? with y value
+        <div className="settings-box">
             <div>
                 <h2>Settings</h2>
             </div>

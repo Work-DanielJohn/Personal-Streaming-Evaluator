@@ -15,6 +15,16 @@
     user-select: none;
 }
 
+body {
+    text-align: center;
+    font-family: 'Allerta', sans-serif;
+}
+
+h2 {
+	margin-top: 30px;
+	margin-bottom: 20px;
+}
+
 button {
 	cursor: pointer;
 }
@@ -45,7 +55,6 @@ Header h1 span:hover {
 Header button {
     display: table; 
     height: 100%;
-    padding: 0px 20px;
     margin: 0 20px;
     font-size: large;
     border: white;
@@ -59,14 +68,23 @@ Header button:hover {
     background-color: var(--light-green);;
 }
 
-body {
-    text-align: center;
-    font-family: 'Allerta', sans-serif;
+.settings-box {
+    position: absolute;
+    overflow: hidden;
+    width: 50vw;
+    top: 80px;
+    right: 00px;
+    transition: 0.8s;
+    background-color: var(--light-green);
+    border: var(--dark-green);
+    color: white;
+    border-style: solid;
+    border-radius: 20px;
+    padding: 10px 100px 20px 20px;
 }
 
-h2 {
-	margin-top: 30px;
-	margin-bottom: 20px;
+.settings-box.h2 {
+    margin: 0px;
 }
 
 .underline {

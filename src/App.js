@@ -54,7 +54,7 @@ const App = () => {
     }
   }, [addTap])
 
-  // Prevent test starting in wrong window
+  // Prevent test starting in wrong menu
   const toggleReady = () => {
     setReady(!ready)
   }
@@ -69,8 +69,8 @@ const App = () => {
   return (
     <div className="container">
       <Header toggle={toggleSettings} />
+      <Burst time={timer} settings={settings} totalTime={totalTime} taps={taps} reset={reset} start={start} ready={toggleReady}/>
       <Settings />
-      {false && <Burst time={timer} settings={settings} totalTime={totalTime} taps={taps} reset={reset} start={start} ready={toggleReady}/>}
     </div>
   );
 }
