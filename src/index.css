@@ -13,6 +13,7 @@
     list-style: none;
     text-decoration: none;
     user-select: none;
+    overflow: hidden;
 }
 
 body {
@@ -27,6 +28,10 @@ h2 {
 
 button {
 	cursor: pointer;
+}
+
+.container {
+    position: relative;
 }
 
 Header {
@@ -70,10 +75,9 @@ Header button:hover {
 
 .settings-box {
     position: absolute;
-    overflow: hidden;
-    width: 50vw;
-    top: 80px;
-    right: 00px;
+    width: 600px;
+    top: 100px;
+    right: -600px;
     transition: 0.8s;
     background-color: var(--light-green);
     border: var(--dark-green);
@@ -81,6 +85,14 @@ Header button:hover {
     border-style: solid;
     border-radius: 20px;
     padding: 10px 100px 20px 20px;
+}
+
+.settings-box.open {
+    right: 0px;
+}
+
+.settings-inner {
+    position: relative;
 }
 
 .settings-box.h2 {

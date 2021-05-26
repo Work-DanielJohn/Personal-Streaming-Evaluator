@@ -19,9 +19,10 @@ const App = () => {
   const [start, setStart] = useState(false)       // Boolean for if game is running
   const [ready, setReady] = useState(true)        // Boolean to prevent game starting in other menus
   const [taps, setTaps] = useState(-1)            // Costs one tap to start ;)
+  const [open, setOpen] = useState(false)         // Open and close the settings menu
 
   const toggleSettings = () => {
-    alert("settings")
+    setOpen(!open)
   }
 
   // Timer countdown
@@ -70,7 +71,7 @@ const App = () => {
     <div className="container">
       <Header toggle={toggleSettings} />
       <Burst time={timer} settings={settings} totalTime={totalTime} taps={taps} reset={reset} start={start} ready={toggleReady}/>
-      <Settings />
+      <Settings open={open} />
     </div>
   );
 }
