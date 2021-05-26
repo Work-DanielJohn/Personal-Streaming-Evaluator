@@ -90,7 +90,7 @@ Header .buttonOn {
     border: var(--dark-green);
     color: white;
     border-style: solid;
-    transition: 0.8s;
+    transition: 0.7s;
 }
 
 .settings-box.open {
