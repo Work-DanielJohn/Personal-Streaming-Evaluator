@@ -18,4 +18,5 @@ const Settings = ({ open }) => {
 
 export default Settings
 
-// open ? "settings-box open" : "settings-box"
+// maybe have a massive invisible box under the settings menu,
+// so if a user clicks on it, then the settings menu closes(?)

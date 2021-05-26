@@ -75,7 +75,7 @@ Header button:hover {
 
 .settings-box {
     position: absolute;
-    width: 600px;
+    width: 400px;
     top: 100px;
     right: -600px;
     transition: 0.8s;

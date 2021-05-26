@@ -19,8 +19,9 @@ const App = () => {
   const [start, setStart] = useState(false)       // Boolean for if game is running
   const [ready, setReady] = useState(true)        // Boolean to prevent game starting in other menus
   const [taps, setTaps] = useState(-1)            // Costs one tap to start ;)
-  const [open, setOpen] = useState(false)         // Open and close the settings menu
+  const [open, setOpen] = useState(false)         // Open / close the settings menu (Closed by default)
 
+  // Toggle the settings menu (open / close)
   const toggleSettings = () => {
     setOpen(!open)
   }
@@ -70,7 +71,8 @@ const App = () => {
   return (
     <div className="container">
       <Header toggle={toggleSettings} />
-      <Burst time={timer} settings={settings} totalTime={totalTime} taps={taps} reset={reset} start={start} ready={toggleReady}/>
+      <Burst time={timer} settings={settings} totalTime={totalTime}
+        taps={taps} reset={reset} start={start} ready={toggleReady}/>
       <Settings open={open} />
     </div>
   );
@@ -94,8 +96,8 @@ Container
 
 // Uso! Modes:
 /*
-• Deathstream       - Build your endurance by tapping as many times as you can within a time limit!
-              or    - Build your endurance by maintaining a tapping rhythm for as long as you can! 
+• Deathstream       - Build endurance by tapping as many times as you can within a time limit!
+              or    - Build endurance by maintaining a tapping rhythm for as long as you can! 
 • Burst mode        - Test your speed by tapping a number of times as fast as possible!
 • Tracking mode     - Track and stream as the circle moves across the map before you run out of life!
 • Freestyle         - Tap to the rhythm of any song you like with customisable hit sounds!
