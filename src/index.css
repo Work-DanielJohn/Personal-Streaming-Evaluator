@@ -60,7 +60,7 @@ Header h1 span:hover {
 Header button {
     display: table; 
     height: 100%;
-    margin: 0 20px;
+    margin: 0 30px;
     font-size: large;
     border: white;
     color: white;
@@ -70,7 +70,13 @@ Header button {
 }
 
 Header button:hover {
-    background-color: var(--light-green);;
+    background-color: var(--light-green);
+    transition: 0.1s;
+}
+
+Header .buttonOn {
+    background-color: var(--light-green);
+    border-style: ridge;
 }
 
 .settings-box {
@@ -83,8 +89,8 @@ Header button:hover {
     border: var(--dark-green);
     color: white;
     border-style: solid;
-    border-radius: 20px;
-    padding: 10px 100px 20px 20px;
+    border-radius: 20px 0 0 20px;
+    padding: 10px 10px 20px 20px;
 }
 
 .settings-box.open {
@@ -95,8 +101,8 @@ Header button:hover {
     position: relative;
 }
 
-.settings-box.h2 {
-    margin: 0px;
+.settings-box h2 {
+    margin: 20px;
 }
 
 .underline {
