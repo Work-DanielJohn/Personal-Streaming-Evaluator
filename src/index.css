@@ -84,13 +84,13 @@ Header .buttonOn {
     width: 400px;
     top: 100px;
     right: -600px;
-    transition: 0.8s;
+    border-radius: 20px 0 0 20px;
+    padding: 10px 10px 20px 20px;
     background-color: var(--light-green);
     border: var(--dark-green);
     color: white;
     border-style: solid;
-    border-radius: 20px 0 0 20px;
-    padding: 10px 10px 20px 20px;
+    transition: 0.8s;
 }
 
 .settings-box.open {
