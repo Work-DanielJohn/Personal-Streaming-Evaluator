@@ -9,20 +9,20 @@ const Settings = ({ open, settings, defaultSettings }) => {
                 </div>
                 <table className="settingsTable">
                     <tbody>
-                        General Settings
+                        <h3>General Settings</h3>
                         <tr>
-                            <td>Left tap button</td>
+                            <td>Left tap</td>
+                            <td><input></input></td>
+                        </tr>
+                        <tr>
+                            <td>Right tap</td>  
                             <td><input></input></td>
                         </tr>
                         <tr> 
                             <td>Streaming frequency</td>
                             <td><input></input></td>
                         </tr> 
-                        <tr>
-                            <td>Right tap button</td>  
-                            <td><input></input></td>
-                        </tr>
-                        <br></br>Burst Mode Settings
+                        <h3>Burst Mode Settings</h3>
                         <tr>
                             <td>Total Time</td>
                             <td><input></input></td>
