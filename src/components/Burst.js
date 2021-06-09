@@ -38,7 +38,7 @@ const Burst = ({ time, settings, totalTime, taps, reset, start, ready }) => {
                         </p>
                         <table className="burstTable">
                             <tbody>
-                                <tr>
+                                <tr className="burstTitle">
                                     <td>Time</td>
                                     <td>Speed</td>
                                     <td>Song BPM</td>

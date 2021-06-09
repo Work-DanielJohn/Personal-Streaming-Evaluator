@@ -73,7 +73,7 @@ const App = () => {
       <Header toggle={toggleSettings} settingOpen={settingOpen}/>
       <Burst time={timer} settings={settings} totalTime={totalTime}
         taps={taps} reset={reset} start={start} ready={toggleReady}/>
-      <Settings open={settingOpen} />
+      <Settings open={settingOpen} settings={settings} defaultSettings={defaultSettings} />
     </div>
   );
 }
