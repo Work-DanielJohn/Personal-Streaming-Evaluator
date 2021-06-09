@@ -5,12 +5,12 @@ import Burst from "./components/Burst"
 
 // Default settings
 const defaultSettings = {
-  testTime: 15,         // 15 seconds
-  timeMultiplier: 1,    // 1dp accuracy (multiplier / 10 = dp)     !!! - This is inaccurate, fix later 
-  streamFreq: 4,        // Frequency of 4: 1 tap per semi-quaver. Freq of 1: 1 tap per quaver.
-  leftKey: 'z',
-  rightKey: 'x',
-  showStats: false,      // Show non-timer statistics
+  testTime: 15,         // DEFAULT 15 - Duration of test
+  timeMultiplier: 1,    // DEFAULT 1 - dp accuracy (multiplier / 10 = dp)     !!! - This is inaccurate, fix later 
+  streamFreq: 4,        // DEFAULT 4 - Frequency of 4: 1 tap per semi-quaver. Freq of 1: 1 tap per quaver.
+  leftKey: 'z',         // DEFAULT 'z' - Left tap key
+  rightKey: 'x',        // DEFAULT 'x' - Right tap key
+  showStats: true,      // DEFAULT true - Show non-timer statistics (Burst only?)
 }
 
 const App = () => {
@@ -20,7 +20,7 @@ const App = () => {
   const [start, setStart] = useState(false)       // Boolean for if game is running
   const [ready, setReady] = useState(true)        // Boolean to prevent game starting in other menus
   const [taps, setTaps] = useState(-1)            // Costs one tap to start ;)
-  const [settingOpen, setOpen] = useState(false)         // Open / close the settings menu (Closed by default)
+  const [settingOpen, setOpen] = useState(false)  // Open / close the settings menu (Closed by default)
 
   // Toggle the settings menu (open / close)
   const toggleSettings = () => {

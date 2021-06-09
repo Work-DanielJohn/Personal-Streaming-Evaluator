@@ -1,4 +1,14 @@
 const Settings = ({ open, settings, defaultSettings }) => {
+    
+    const replaceKey = () => {
+        // show replace key window
+        // keyboard handle for input
+        // allow cancel with button
+        // return new key or None if cancel
+        // maybe add 10s timer with cancel if no input??
+        // new input will change settings.leftKey for example
+    }
+
 
     return (
         // make settings component position relative? with y value
@@ -11,21 +21,21 @@ const Settings = ({ open, settings, defaultSettings }) => {
                     <tbody>
                         <h3>General Settings</h3>
                         <tr>
-                            <td>Left tap</td>
-                            <td><input></input></td>
+                            <td>Left tap: {settings.leftKey}</td>
+                            <td><button onClick={settings.leftKey = replaceKey()}>Choose new</button></td>
                         </tr>
                         <tr>
-                            <td>Right tap</td>  
-                            <td><input></input></td>
+                            <td>Right tap: {settings.rightKey}</td>  
+                            <td><button onClick={settings.rightKey = replaceKey()}>Choose new</button></td>
                         </tr>
                         <tr> 
                             <td>Streaming frequency</td>
-                            <td><input></input></td>
+                            <td><button>^</button>{settings.streamFreq}<button>v</button></td>
                         </tr> 
                         <h3>Burst Mode Settings</h3>
                         <tr>
-                            <td>Total Time</td>
-                            <td><input></input></td>
+                            <td>Test Duration</td>
+                            <td><button>^</button>{settings.testTime}<button>v</button></td>
                         </tr>
                         <tr>
                             <td>Show non-timer stats during test</td>
@@ -33,8 +43,8 @@ const Settings = ({ open, settings, defaultSettings }) => {
                         </tr>
                         
                         <tr>
-                            <td><button>Save</button></td>
                             <td><button>Reset</button></td>
+                            <td><button>Save</button></td>
                         </tr>
                     </tbody>
                     
