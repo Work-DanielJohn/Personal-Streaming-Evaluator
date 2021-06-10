@@ -9,6 +9,13 @@ const Settings = ({ open, settings, defaultSettings }) => {
         // new input will change settings.leftKey for example
     }
 
+    const replaceLeft = () => {
+        alert("replace left key")
+    }
+
+    const replaceRight = () => {
+        alert("replace right key")
+    }
 
     return (
         // make settings component position relative? with y value
@@ -22,11 +29,11 @@ const Settings = ({ open, settings, defaultSettings }) => {
                         <h3>General Settings</h3>
                         <tr>
                             <td>Left tap: {settings.leftKey}</td>
-                            <td><button onClick={settings.leftKey = replaceKey()}>Choose new</button></td>
+                            <td><button onClick={replaceLeft}>Choose new</button></td>
                         </tr>
                         <tr>
                             <td>Right tap: {settings.rightKey}</td>  
-                            <td><button onClick={settings.rightKey = replaceKey()}>Choose new</button></td>
+                            <td><button onClick={replaceRight}>Choose new</button></td>
                         </tr>
                         <tr> 
                             <td>Streaming frequency</td>
