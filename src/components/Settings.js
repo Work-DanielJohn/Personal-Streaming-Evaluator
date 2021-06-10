@@ -23,11 +23,9 @@ const Settings = ({ open, settings, defaultSettings }) => {
         // make settings component position relative? with y value
         <div className={open ? "settings-box open" : "settings-box"}>
             <div className="settings-inner">
-                <div>
-                    <h2>Settings</h2>
-                </div>
-                
+                <h2>Settings</h2>
                 <h3>General Settings</h3>
+                
                 <table className="settingsTable">
                     <tbody>
                         <tr>
