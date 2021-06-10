@@ -1,6 +1,6 @@
 const Settings = ({ open, settings, defaultSettings }) => {
-    
     const replaceKey = () => {
+        alert("ayo")
         // show replace key window
         // keyboard handle for input
         // allow cancel with button
@@ -11,38 +11,53 @@ const Settings = ({ open, settings, defaultSettings }) => {
 
     const replaceLeft = () => {
         alert("replace left key")
+        replaceKey()
     }
 
     const replaceRight = () => {
         alert("replace right key")
+        replaceKey()
     }
 
     return (
         // make settings component position relative? with y value
         <div className={open ? "settings-box open" : "settings-box"}>
-            <div className={"settings-inner"}>
+            <div className="settings-inner">
                 <div>
                     <h2>Settings</h2>
                 </div>
+                
+                <h3>General Settings</h3>
                 <table className="settingsTable">
                     <tbody>
-                        <h3>General Settings</h3>
                         <tr>
-                            <td>Left tap: {settings.leftKey}</td>
-                            <td><button onClick={replaceLeft}>Choose new</button></td>
+                            <td>Left tap: <i>{settings.leftKey}</i></td>
+                            <td><button onClick={replaceLeft}><i className="fas fa-edit"></i></button></td>
                         </tr>
                         <tr>
-                            <td>Right tap: {settings.rightKey}</td>  
-                            <td><button onClick={replaceRight}>Choose new</button></td>
+                            <td>Right tap: <i>{settings.rightKey}</i></td>  
+                            <td><button onClick={replaceRight}><i className="fas fa-edit"></i></button></td>
                         </tr>
                         <tr> 
-                            <td>Streaming frequency</td>
-                            <td><button>^</button>{settings.streamFreq}<button>v</button></td>
-                        </tr> 
-                        <h3>Burst Mode Settings</h3>
+                            <td>Streaming <br></br>frequency</td>
+                            <td>
+                                <button><i className="far fa-plus-square"></i></button>
+                                {settings.streamFreq}
+                                <button><i className="far fa-minus-square"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h3>Burst Mode Settings</h3>
+                <table className="settingsTable">
+                    <tbody>
                         <tr>
                             <td>Test Duration</td>
-                            <td><button>^</button>{settings.testTime}<button>v</button></td>
+                            <td>
+                                <button><i className="far fa-plus-square"></i></button>
+                                {settings.testTime}
+                                <button><i className="far fa-minus-square"></i></button>
+                            </td>
                         </tr>
                         <tr>
                             <td>Show non-timer stats during test</td>

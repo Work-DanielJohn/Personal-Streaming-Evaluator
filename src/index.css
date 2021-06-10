@@ -111,10 +111,6 @@ Header .buttonOn {
     margin: 20px;
 }
 
-.settingsTable tbody h3 {
-    text-align: center;
-}
-
 .settingsTable tbody tr td {
     border: none;
     text-align: center;
