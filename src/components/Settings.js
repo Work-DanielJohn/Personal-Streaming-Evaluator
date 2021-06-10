@@ -1,4 +1,7 @@
-const Settings = ({ open, settings, defaultSettings }) => {
+const Settings = ({ useState, open, settings, defaultSettings }) => {
+    const [newTime, setNewTime] = useState(settings.testTime)
+    const [newFreq, setNewFreq] = useState(settings.streamFreq)
+
     const replaceKey = () => {
         alert("ayo")
         // show replace key window
@@ -25,7 +28,7 @@ const Settings = ({ open, settings, defaultSettings }) => {
             <div className="settings-inner">
                 <h2>Settings</h2>
                 <h3>General Settings</h3>
-                
+
                 <table className="settingsTable">
                     <tbody>
                         <tr>
@@ -37,11 +40,11 @@ const Settings = ({ open, settings, defaultSettings }) => {
                             <td><button onClick={replaceRight}><i className="fas fa-edit"></i></button></td>
                         </tr>
                         <tr> 
-                            <td>Streaming <br></br>frequency</td>
+                            <td>Streaming<br></br>frequency<br></br><small>( Recommended: 4 )</small></td>
                             <td>
-                                <button><i className="far fa-plus-square"></i></button>
-                                {settings.streamFreq}
-                                <button><i className="far fa-minus-square"></i></button>
+                                <button onClick={() => setNewFreq(newFreq + 1)}><i className="far fa-plus-square"></i></button>
+                                {newFreq}
+                                <button onClick={() => setNewFreq(newFreq - 1)}><i className="far fa-minus-square"></i></button>
                             </td>
                         </tr>
                     </tbody>
@@ -52,9 +55,9 @@ const Settings = ({ open, settings, defaultSettings }) => {
                         <tr>
                             <td>Test Duration</td>
                             <td>
-                                <button><i className="far fa-plus-square"></i></button>
-                                {settings.testTime}
-                                <button><i className="far fa-minus-square"></i></button>
+                                <button onClick={() => setNewTime(newTime + 1)}><i className="far fa-plus-square"></i></button>
+                                {newTime}
+                                <button onClick={() => setNewTime(newTime - 1)}><i className="far fa-minus-square"></i></button>
                             </td>
                         </tr>
                         <tr>
@@ -77,5 +80,17 @@ const Settings = ({ open, settings, defaultSettings }) => {
 
 export default Settings
 
+// TO DO:
+
+// have a <span {conditional color for whether setting is changed} ></span>
+// ^^ this will change color to blue for changed settings, then change back to white when saved
+
+// prevent user from choosing weird time settings
+
+
+
+// IDEAS:
+
 // maybe have a massive invisible box under the settings menu,
 // so if a user clicks on it, then the settings menu closes(?)
+
