@@ -84,8 +84,8 @@ Header button:hover {
 
 Header .buttonOn {
     background-color: var(--light-green);
-    border-style: ridge;
     border-color: var(--pastel-green);
+    border-style: ridge;
 }
 
 .settings-box {
@@ -120,6 +120,19 @@ Header .buttonOn {
     text-align: center;
     height: 100%;
     width: 100%;
+}
+
+.settingsTable tbody tr td button {
+    background-color: var(--light-green);
+    border-color: var(--pastel-green);
+    border-radius: 50px;
+    transition: 0.1s;
+}
+
+.settingsTable tbody tr td button:hover {
+    font-size: large;
+    background-color: var(--pastel-green);
+    border-color: white;
 }
 
 .underline {
