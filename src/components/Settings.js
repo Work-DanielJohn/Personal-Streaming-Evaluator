@@ -27,7 +27,7 @@ const Settings = ({ useState, open, settings, defaultSettings }) => {
         <div className={open ? "settings-box open" : "settings-box"}>
             <div className="settings-inner">
                 <h2>Settings</h2>
-                <h3>General Settings</h3>
+                <h3>General</h3>
 
                 <table className="settingsTable">
                     <tbody>
@@ -49,7 +49,7 @@ const Settings = ({ useState, open, settings, defaultSettings }) => {
                         </tr>
                     </tbody>
                 </table>
-                <h3>Burst Mode Settings</h3>
+                <h3>Burst Mode</h3>
                 <table className="settingsTable">
                     <tbody>
                         <tr>

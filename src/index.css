@@ -29,7 +29,11 @@ h2 {
 }
 
 button {
-	cursor: pointer;
+	width: 100px;
+	height: 50px;
+    border-width: 4px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 .container {
@@ -71,8 +75,6 @@ Header button {
     border: white;
     color: white;
     background: none;
-    cursor: pointer;
-    transition: 0.3s;
 }
 
 Header button:hover {
@@ -126,11 +128,6 @@ Header .buttonOn {
 
 .burstBox {
 	margin: 20px;
-}
-
-button {
-	width: 100px;
-	height: 50px;
 }
 
 .burstTable {
