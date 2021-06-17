@@ -40,7 +40,7 @@ const Settings = ({ useState, open, settings, defaultSettings, changeSettings })
                             <td>Streaming<br></br>frequency<br></br><small>( Recommended: 4 )</small></td>
                             <td>
                                 <button onClick={() => setNewFreq(newFreq + 1)}><i className="far fa-plus-square"></i></button>
-                                {newFreq}
+                                {newFreq} taps per quaver
                                 <button onClick={() => setNewFreq(newFreq - 1)}><i className="far fa-minus-square"></i></button>
                             </td>
                         </tr>
@@ -53,7 +53,7 @@ const Settings = ({ useState, open, settings, defaultSettings, changeSettings })
                             <td>Test Duration</td>
                             <td>
                                 <button onClick={() => setNewTime(newTime + 1)}><i className="far fa-plus-square"></i></button>
-                                {newTime}
+                                {newTime} seconds
                                 <button onClick={() => setNewTime(newTime - 1)}><i className="far fa-minus-square"></i></button>
                             </td>
                         </tr>
@@ -76,6 +76,8 @@ const Settings = ({ useState, open, settings, defaultSettings, changeSettings })
 export default Settings
 
 // TO DO:
+
+// Increment/Decrement type settings work | changing keys and checkbox settings do not
 
 // • have a <span {conditional color for whether setting is changed} ></span>
 // this will change color to blue for changed settings, then change back to white when saved
