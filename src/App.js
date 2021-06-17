@@ -13,8 +13,9 @@ const defaultSettings = {
   showStats: true,      // DEFAULT true - Show non-timer statistics (Burst only?)
 }
 
+const settings = Object.create(defaultSettings)
+
 const App = () => {
-  const settings = Object.create(defaultSettings)
   const [totalTime, setTotalTime] = useState(settings.testTime)
   const [timer, setTimer] = useState(settings.testTime)
   const [start, setStart] = useState(false)       // Boolean for if game is running
@@ -33,7 +34,7 @@ const App = () => {
     (timer > 0) &&                                // When timer hasn't run out
     (start === true) &&                           // When test has started
     setTimeout(() => setTimer(timer - 1), (1000)) // Function to count down
-  }, [settings, timer, start])
+  }, [timer, start])
   
   // Add tap
   const addTap = useCallback(
@@ -47,7 +48,7 @@ const App = () => {
           timer > 0 && setTaps(taps + 1)
         }
       }
-    }, [settings, taps, timer, start, ready]
+    }, [taps, timer, start, ready]
   )
   
   // Keyboard event manager
