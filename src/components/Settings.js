@@ -40,7 +40,7 @@ const Settings = ({ useState, open, settings, defaultSettings, changeSettings })
                             <td>Streaming<br></br>frequency<br></br><small>( Recommended: 4 )</small></td>
                             <td>
                                 <button onClick={() => setNewFreq(newFreq + 1)}><i className="far fa-plus-square"></i></button>
-                                {newFreq} taps per quaver
+                                {newFreq} taps <br></br> per quaver
                                 <button onClick={() => setNewFreq(newFreq - 1)}><i className="far fa-minus-square"></i></button>
                             </td>
                         </tr>
