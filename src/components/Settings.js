@@ -1,9 +1,9 @@
-const Settings = ({ useState, open, settings, defaultSettings }) => {
+const Settings = ({ useState, open, settings, defaultSettings, changeSettings }) => {
     const [newTime, setNewTime] = useState(settings.testTime)
     const [newFreq, setNewFreq] = useState(settings.streamFreq)
 
-    const replaceKey = () => {
-        alert("ayo")
+    const replaceKey = (keyType) => {
+        alert(keyType)
         // show replace key window
         // keyboard handle for input
         // allow cancel with button
@@ -12,14 +12,11 @@ const Settings = ({ useState, open, settings, defaultSettings }) => {
         // new input will change settings.leftKey for example
     }
 
-    const replaceLeft = () => {
-        alert("replace left key")
-        replaceKey()
-    }
-
-    const replaceRight = () => {
-        alert("replace right key")
-        replaceKey()
+    const save = () => {
+        changeSettings({
+            time: newTime,
+            freq: newFreq
+        })
     }
 
     return (
@@ -33,11 +30,11 @@ const Settings = ({ useState, open, settings, defaultSettings }) => {
                     <tbody>
                         <tr>
                             <td>Left tap: <i>{settings.leftKey}</i></td>
-                            <td><button onClick={replaceLeft}><i className="fas fa-edit"></i></button></td>
+                            <td><button onClick={() => replaceKey("left")}><i className="fas fa-edit"></i></button></td>
                         </tr>
                         <tr>
                             <td>Right tap: <i>{settings.rightKey}</i></td>  
-                            <td><button onClick={replaceRight}><i className="fas fa-edit"></i></button></td>
+                            <td><button onClick={() => replaceKey("right")}><i className="fas fa-edit"></i></button></td>
                         </tr>
                         <tr> 
                             <td>Streaming<br></br>frequency<br></br><small>( Recommended: 4 )</small></td>
@@ -67,11 +64,9 @@ const Settings = ({ useState, open, settings, defaultSettings }) => {
                         
                         <tr>
                             <td><button>Reset</button></td>
-                            <td><button>Save</button></td>
+                            <td><button onClick={save}>Save</button></td>
                         </tr>
                     </tbody>
-                    
-                    
                 </table>
             </div>
         </div>
@@ -82,15 +77,16 @@ export default Settings
 
 // TO DO:
 
-// have a <span {conditional color for whether setting is changed} ></span>
-// ^^ this will change color to blue for changed settings, then change back to white when saved
+// • have a <span {conditional color for whether setting is changed} ></span>
+// this will change color to blue for changed settings, then change back to white when saved
 
-// prevent user from choosing weird time settings
+// • prevent user from choosing weird time settings
 
 
 
 // IDEAS:
 
-// maybe have a massive invisible box under the settings menu,
+// • maybe have a massive invisible box under the settings menu,
 // so if a user clicks on it, then the settings menu closes(?)
 
+// • add high scores and leaderboard

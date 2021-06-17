@@ -15,12 +15,13 @@ const defaultSettings = {
 
 const App = () => {
   const settings = Object.create(defaultSettings)
-  const totalTime = settings.testTime
-  const [timer, setTimer] = useState(totalTime)
+  const [totalTime, setTotalTime] = useState(settings.testTime)
+  const [timer, setTimer] = useState(settings.testTime)
   const [start, setStart] = useState(false)       // Boolean for if game is running
   const [ready, setReady] = useState(true)        // Boolean to prevent game starting in other menus
   const [taps, setTaps] = useState(-1)            // Costs one tap to start ;)
   const [settingOpen, setOpen] = useState(false)  // Open / close the settings menu (Closed by default)
+  
 
   // Toggle the settings menu (open / close)
   const toggleSettings = () => {
@@ -64,9 +65,16 @@ const App = () => {
 
   // Reset test to starting conditions
   const reset = () => {
-    setTimer(totalTime)
+    setTimer(settings.testTime)
+    setTotalTime(settings.testTime)
     setStart(false)
     setTaps(0)
+  }
+
+  const changeSettings = (newSettings) => {
+    settings.testTime = newSettings.time
+    settings.streamFreq = newSettings.freq
+    reset()
   }
 
   return (
@@ -74,7 +82,8 @@ const App = () => {
       <Header toggle={toggleSettings} settingOpen={settingOpen}/>
       <Burst time={timer} settings={settings} totalTime={totalTime}
         taps={taps} reset={reset} start={start} ready={toggleReady}/>
-      <Settings useState={useState} open={settingOpen} settings={settings} defaultSettings={defaultSettings} />
+      <Settings useState={useState} open={settingOpen} settings={settings} defaultSettings={defaultSettings} changeSettings={changeSettings} />
+      <button onClick={() => setTimer(33)}>testtest</button>
     </div>
   );
 }
