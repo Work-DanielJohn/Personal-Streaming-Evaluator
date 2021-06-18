@@ -1,7 +1,7 @@
 const StatsPanel = ({ time, settings, totalTime, taps }) => {
     const timeElapsed = totalTime - time
     const averageStream = taps / timeElapsed
-    const songBPM = taps / (totalTime - time) * (60 / settings.streamFreq)
+    const songBPM = taps / (timeElapsed) * (60 / settings.streamFreq)
 
     return (
         <div>
