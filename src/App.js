@@ -22,7 +22,6 @@ const App = () => {
   const [ready, setReady] = useState(true)        // Boolean to prevent game starting in other menus
   const [taps, setTaps] = useState(-1)            // Costs one tap to start ;)
   const [settingOpen, setOpen] = useState(false)  // Open / close the settings menu (Closed by default)
-  
 
   // Toggle the settings menu (open / close)
   const toggleSettings = () => {
@@ -66,10 +65,11 @@ const App = () => {
 
   // Reset test to starting conditions
   const reset = () => {
+    setStart(false)
     setTimer(settings.testTime)
     setTotalTime(settings.testTime)
-    setStart(false)
     setTaps(0)
+    setTimeout(() => setTimer(settings.testTime), (1000))
   }
 
   const changeSettings = (newSettings) => {
@@ -83,7 +83,7 @@ const App = () => {
       <Header toggle={toggleSettings} settingOpen={settingOpen}/>
       <Burst time={timer} settings={settings} totalTime={totalTime}
         taps={taps} reset={reset} start={start} ready={toggleReady}/>
-      <Settings useState={useState} open={settingOpen} settings={settings} defaultSettings={defaultSettings} changeSettings={changeSettings} />
+      <Settings useState={useState} open={settingOpen} settings={settings} defaultSettings={defaultSettings} changeSettings={changeSettings}/>
     </div>
   );
 }
