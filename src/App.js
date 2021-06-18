@@ -84,7 +84,6 @@ const App = () => {
       <Burst time={timer} settings={settings} totalTime={totalTime}
         taps={taps} reset={reset} start={start} ready={toggleReady}/>
       <Settings useState={useState} open={settingOpen} settings={settings} defaultSettings={defaultSettings} changeSettings={changeSettings} />
-      <button onClick={() => setTimer(33)}>testtest</button>
     </div>
   );
 }
