@@ -129,6 +129,12 @@ Header .buttonOn {
     transition: 0.1s;
 }
 
+.settingsTable tbody tr td button:hover:disabled {
+    font-size: small;
+    background-color: var(--light-green);
+    border-color: var(--pastel-green);
+}
+
 .settingsTable tbody tr td button:hover {
     font-size: large;
     background-color: var(--pastel-green);
