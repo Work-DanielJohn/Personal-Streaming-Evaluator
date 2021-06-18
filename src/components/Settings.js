@@ -39,9 +39,9 @@ const Settings = ({ useState, open, settings, defaultSettings, changeSettings })
                         <tr> 
                             <td>Streaming<br></br>frequency<br></br><small>( Recommended: 4 )</small></td>
                             <td>
-                                <button onClick={() => setNewFreq(newFreq + 1)}><i className="far fa-plus-square"></i></button>
-                                {newFreq} taps <br></br> per quaver
-                                <button onClick={() => setNewFreq(newFreq - 1)}><i className="far fa-minus-square"></i></button>
+                                <button onClick={() => setNewFreq(newFreq * 2)} disabled={newFreq >= 32 ? true : false}><i className="far fa-plus-square"></i></button>
+                                {newFreq} tap{newFreq >= 2 ? "s" : ""} <br></br> per quaver
+                                <button onClick={() => setNewFreq(newFreq / 2)} disabled={newFreq <= 1 ? true : false}><i className="far fa-minus-square"></i></button>
                             </td>
                         </tr>
                     </tbody>
@@ -52,9 +52,9 @@ const Settings = ({ useState, open, settings, defaultSettings, changeSettings })
                         <tr>
                             <td>Test Duration</td>
                             <td>
-                                <button onClick={() => setNewTime(newTime + 1)}><i className="far fa-plus-square"></i></button>
+                                <button onClick={() => setNewTime(newTime + 1)} disabled={newTime >= 60 ? true : false}><i className="far fa-plus-square"></i></button>
                                 {newTime} seconds
-                                <button onClick={() => setNewTime(newTime - 1)}><i className="far fa-minus-square"></i></button>
+                                <button onClick={() => setNewTime(newTime - 1)} disabled={newTime <= 5 ? true : false}><i className="far fa-minus-square"></i></button>
                             </td>
                         </tr>
                         <tr>
@@ -77,12 +77,14 @@ export default Settings
 
 // TO DO:
 
-// Increment/Decrement type settings work | changing keys and checkbox settings do not
+// Changing keys and checkbox settings do not work
+
+// • Make it easier to change duration as going from 5 to 60 is 55 clicks!!
+
+// • Fix Help description to be dynamic --> 'stats will be shown "before and after" the test' should depend on settings
 
 // • have a <span {conditional color for whether setting is changed} ></span>
 // this will change color to blue for changed settings, then change back to white when saved
-
-// • prevent user from choosing weird time settings
 
 
 
