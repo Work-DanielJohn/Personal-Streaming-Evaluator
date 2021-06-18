@@ -14,8 +14,8 @@ const Burst = ({ time, settings, totalTime, taps, reset, start, ready }) => {
             <h2>Burst mode</h2>
             { !help && 
                 <>
-                    {<button onClick={toggleHelp} disabled={start && time !== 0}> Help <i className="far fa-question-circle"></i> </button>}
-                    {<button onClick={reset} disabled={time !== 0}>Reset <i className="fas fa-undo"></i> </button>}
+                    <button onClick={toggleHelp} disabled={start && time !== 0}> Help <i className="far fa-question-circle"></i> </button>
+                    <button onClick={reset} disabled={time === totalTime}>Reset <i className="fas fa-undo"></i> </button>
                     {!start && <p>Press {settings.leftKey} or {settings.rightKey} to start! </p>}
                     <br></br>
                     <StatsPanel time={time} settings={settings} totalTime={totalTime} taps={taps} />
