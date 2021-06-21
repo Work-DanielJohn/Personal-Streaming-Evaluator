@@ -30,9 +30,9 @@ const App = () => {
 
   // Timer countdown
   useEffect(() => {
-    (timer > 0) &&                                // When timer hasn't run out
-    (start === true) &&                           // When test has started
-    setTimeout(() => setTimer(timer - 1), (1000)) // Function to count down
+    if (timer > 0 &&                                                  // When timer hasn't run out
+    start === true) {                                                 // When test has started
+      setTimeout(() => setTimer(timer - 1), (1000))}                  // Function to count down
   }, [timer, start])
   
   // Add tap
@@ -65,11 +65,14 @@ const App = () => {
 
   // Reset test to starting conditions
   const reset = () => {
+    setReady(false)
     setStart(false)
-    setTimer(settings.testTime)
     setTotalTime(settings.testTime)
     setTaps(0)
+
+    // The test will reset in 1 second - a workaround that I may improve later
     setTimeout(() => setTimer(settings.testTime), (1000))
+    setTimeout(() => setReady(true), (1000))
   }
 
   const changeSettings = (newSettings) => {
