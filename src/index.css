@@ -115,6 +115,10 @@ Header .buttonOn {
     margin: 20px;
 }
 
+.settingsTable tbody tr td:first-child {
+    text-align: left;
+}
+
 .settingsTable tbody tr td {
     border: none;
     text-align: center;
