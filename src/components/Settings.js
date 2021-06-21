@@ -52,9 +52,9 @@ const Settings = ({ useState, open, settings, defaultSettings, changeSettings })
                         <tr>
                             <td>Test Duration</td>
                             <td>
-                                <button onClick={() => setNewTime(newTime + 1)} disabled={newTime >= 60 ? true : false}><i className="far fa-plus-square"></i></button>
+                                <button onClick={() => setNewTime(newTime + 5)} disabled={newTime >= 60 ? true : false}><i className="far fa-plus-square"></i></button>
                                 {newTime} seconds
-                                <button onClick={() => setNewTime(newTime - 1)} disabled={newTime <= 5 ? true : false}><i className="far fa-minus-square"></i></button>
+                                <button onClick={() => setNewTime(newTime - 5)} disabled={newTime <= 5 ? true : false}><i className="far fa-minus-square"></i></button>
                             </td>
                         </tr>
                         <tr>
@@ -78,8 +78,6 @@ export default Settings
 // TO DO:
 
 // Changing keys and checkbox settings do not work
-
-// • Make it easier to change duration as going from 5 to 60 is 55 clicks!!
 
 // • Fix Help description to be dynamic --> 'stats will be shown "before and after" the test' should depend on settings
 
