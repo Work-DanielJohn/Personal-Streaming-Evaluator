@@ -1,23 +1,41 @@
+import { useEffect , useCallback } from "react"
+
 const Settings = ({ useState, open, settings, defaultSettings, changeSettings }) => {
     const [newTime, setNewTime] = useState(settings.testTime)
     const [newFreq, setNewFreq] = useState(settings.streamFreq)
-
-    const replaceKey = (keyType) => {
-        alert(keyType)
-        // show replace key window
-        // keyboard handle for input
-        // allow cancel with button
-        // return new key or None if cancel
-        // maybe add 10s timer with cancel if no input??
-        // new input will change settings.leftKey for example
-    }
+    const [newLeft, setNewLeft] = useState(settings.leftKey)
+    const [newRight, setNewRight] = useState(settings.rightKey)
+    const [replace, setReplace] = useState(0)
+    // 0 = No replace | 1 = replace left key | 2 = replace right key
 
     const save = () => {
         changeSettings({
             time: newTime,
-            freq: newFreq
+            freq: newFreq,
+            left: newLeft,
+            right: newRight
         })
     }
+
+    const newKey = useCallback(
+        (event) => {
+            const { key } = event
+            if (key === "Escape") { alert("ayo") }
+            else if (replace === 1) setNewLeft(key)
+            else if (replace === 2) setNewRight(key)
+            setReplace(0)
+        },
+        [replace],
+    )
+
+    useEffect(() => {
+        if (replace) {
+            window.addEventListener("keydown", newKey)
+            return () => {
+                window.removeEventListener("keydown", newKey)
+            }
+        }
+      }, [newKey, replace])
 
     return (
         // make settings component position relative? with y value
@@ -29,12 +47,16 @@ const Settings = ({ useState, open, settings, defaultSettings, changeSettings })
                 <table className="settingsTable">
                     <tbody>
                         <tr>
-                            <td>Left tap: <i>{settings.leftKey}</i></td>
-                            <td><button onClick={() => replaceKey("left")}><i className="fas fa-edit"></i></button></td>
+                            <td>Left tap: <i>{newLeft}</i></td>
+                            <td>
+                                <button className={replace === 1 ? "activeSettingButton" : ""}
+                                    onClick={() => setReplace(replace === 0 ? 1 : 0)}><i className="fas fa-edit"></i>
+                                </button>
+                            </td>
                         </tr>
                         <tr>
-                            <td>Right tap: <i>{settings.rightKey}</i></td>  
-                            <td><button onClick={() => replaceKey("right")}><i className="fas fa-edit"></i></button></td>
+                            <td>Right tap: <i>{newRight}</i></td>  
+                            <td><button onClick={() => setReplace(2)}><i className="fas fa-edit"></i></button></td>
                         </tr>
                         <tr> 
                             <td>Streaming<br></br>frequency<br></br><small>( Recommended: 4 )</small></td>
@@ -77,7 +99,13 @@ export default Settings
 
 // TO DO:
 
-// Changing keys and checkbox settings do not work
+// Changing keys works but it doesn't show the user any prompts
+
+// Checkbox settings do not work
+
+// Changing to the same key starts the game in the background (solve by toggling ready i think)
+
+// Make reset button red when settings arent the same as default (maybe disabled if they all are)
 
 // • Fix Help description to be dynamic --> 'stats will be shown "before and after" the test' should depend on settings
 

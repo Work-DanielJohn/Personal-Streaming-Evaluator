@@ -38,7 +38,7 @@ const App = () => {
   // Add tap
   const addTap = useCallback(
     (event) => {
-      const { key } = event;
+      const { key } = event
       if (ready) {
         if (key === settings.leftKey || key === settings.rightKey) {
           if (start === false) {
@@ -78,6 +78,8 @@ const App = () => {
   const changeSettings = (newSettings) => {
     settings.testTime = newSettings.time
     settings.streamFreq = newSettings.freq
+    settings.leftKey = newSettings.left
+    settings.rightKey = newSettings.right
     reset()
   }
 

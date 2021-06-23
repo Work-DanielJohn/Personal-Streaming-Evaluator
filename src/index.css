@@ -139,7 +139,7 @@ Header .buttonOn {
     border-color: var(--pastel-green);
 }
 
-.settingsTable tbody tr td button:hover {
+.settingsTable tbody tr td button:hover, .settingsTable tbody tr td .activeSettingButton {
     font-size: large;
     background-color: var(--pastel-green);
     border-color: white;
