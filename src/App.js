@@ -25,6 +25,7 @@ const App = () => {
 
   // Toggle the settings menu (open / close)
   const toggleSettings = () => {
+    setReady(!ready)
     setOpen(!settingOpen)
   }
 
