@@ -1,6 +1,6 @@
-import { useEffect , useCallback } from "react"
+import { useState, useEffect , useCallback } from "react"
 
-const Settings = ({ useState, open, settings, defaultSettings, changeSettings }) => {
+const Settings = ({ open, settings, defaultSettings, changeSettings }) => {
     const [newTime, setNewTime] = useState(settings.testTime)
     const [newFreq, setNewFreq] = useState(settings.streamFreq)
     const [newLeft, setNewLeft] = useState(settings.leftKey)
@@ -20,7 +20,7 @@ const Settings = ({ useState, open, settings, defaultSettings, changeSettings })
     const newKey = useCallback(
         (event) => {
             const { key } = event
-            if (key === "Escape") { alert("ayo") }
+            if (key === "Escape") { }
             else if (replace === 1) setNewLeft(key)
             else if (replace === 2) setNewRight(key)
             setReplace(0)
@@ -105,8 +105,6 @@ export default Settings
 // Changing keys works but it doesn't show the user any prompts
 
 // Checkbox settings do not work
-
-// Changing to the same key starts the game in the background (solve by toggling ready i think)
 
 // Make reset button red when settings arent the same as default (maybe disabled if they all are)
 

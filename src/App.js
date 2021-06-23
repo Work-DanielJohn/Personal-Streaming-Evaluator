@@ -25,8 +25,8 @@ const App = () => {
 
   // Toggle the settings menu (open / close)
   const toggleSettings = () => {
-    setReady(!ready)
     setOpen(!settingOpen)
+    setReady(settingOpen)
   }
 
   // Timer countdown
@@ -73,7 +73,7 @@ const App = () => {
 
     // The test will reset in 1 second - a workaround that I may improve later
     setTimeout(() => setTimer(settings.testTime), (1000))
-    setTimeout(() => setReady(true), (1000))
+    if (!settingOpen) setTimeout(() => setReady(true), (1000))
   }
 
   const changeSettings = (newSettings) => {
@@ -89,7 +89,8 @@ const App = () => {
       <Header toggle={toggleSettings} settingOpen={settingOpen}/>
       <Burst time={timer} settings={settings} totalTime={totalTime}
         taps={taps} reset={reset} start={start} ready={toggleReady}/>
-      <Settings useState={useState} open={settingOpen} settings={settings} defaultSettings={defaultSettings} changeSettings={changeSettings}/>
+      <Settings open={settingOpen} settings={settings}
+        defaultSettings={defaultSettings} changeSettings={changeSettings}/>
     </div>
   );
 }
