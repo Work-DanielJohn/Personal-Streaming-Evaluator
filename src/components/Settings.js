@@ -50,13 +50,16 @@ const Settings = ({ useState, open, settings, defaultSettings, changeSettings })
                             <td>Left tap: <i>{newLeft}</i></td>
                             <td>
                                 <button className={replace === 1 ? "activeSettingButton" : ""}
-                                    onClick={() => setReplace(replace === 0 ? 1 : 0)}><i className="fas fa-edit"></i>
+                                    onClick={() => setReplace(replace !== 1 ? 1 : 0)}><i className="fas fa-edit"></i>
                                 </button>
                             </td>
                         </tr>
                         <tr>
                             <td>Right tap: <i>{newRight}</i></td>  
-                            <td><button onClick={() => setReplace(2)}><i className="fas fa-edit"></i></button></td>
+                            <td>
+                                <button className={replace === 2 ? "activeSettingButton" : ""}
+                                    onClick={() => setReplace(replace !== 2 ? 2 : 0)}><i className="fas fa-edit"></i></button>
+                            </td>
                         </tr>
                         <tr> 
                             <td>Streaming<br></br>frequency<br></br><small>( Recommended: 4 )</small></td>
