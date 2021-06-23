@@ -49,7 +49,7 @@ const Settings = ({ open, settings, defaultSettings, changeSettings }) => {
                         <tr>
                             <td>Left tap: <i>{newLeft}</i></td>
                             <td>
-                                <button className={replace === 1 ? "activeSettingButton" : ""}
+                                <button tabindex={open ? "" : "-1"} className={replace === 1 ? "activeSettingButton" : ""}
                                     onClick={() => setReplace(replace !== 1 ? 1 : 0)}><i className="fas fa-edit"></i>
                                 </button>
                             </td>
@@ -57,16 +57,16 @@ const Settings = ({ open, settings, defaultSettings, changeSettings }) => {
                         <tr>
                             <td>Right tap: <i>{newRight}</i></td>  
                             <td>
-                                <button className={replace === 2 ? "activeSettingButton" : ""}
+                                <button tabindex={open ? "" : "-1"} className={replace === 2 ? "activeSettingButton" : ""}
                                     onClick={() => setReplace(replace !== 2 ? 2 : 0)}><i className="fas fa-edit"></i></button>
                             </td>
                         </tr>
                         <tr> 
                             <td>Streaming<br></br>frequency<br></br><small>( Recommended: 4 )</small></td>
                             <td>
-                                <button onClick={() => setNewFreq(newFreq * 2)} disabled={newFreq >= 32 ? true : false}><i className="far fa-plus-square"></i></button>
+                                <button tabindex={open ? "" : "-1"} onClick={() => setNewFreq(newFreq * 2)} disabled={newFreq >= 32 ? true : false}><i className="far fa-plus-square"></i></button>
                                 {newFreq} tap{newFreq >= 2 ? "s" : ""} <br></br> per quaver
-                                <button onClick={() => setNewFreq(newFreq / 2)} disabled={newFreq <= 1 ? true : false}><i className="far fa-minus-square"></i></button>
+                                <button tabindex={open ? "" : "-1"} onClick={() => setNewFreq(newFreq / 2)} disabled={newFreq <= 1 ? true : false}><i className="far fa-minus-square"></i></button>
                             </td>
                         </tr>
                     </tbody>
@@ -77,19 +77,19 @@ const Settings = ({ open, settings, defaultSettings, changeSettings }) => {
                         <tr>
                             <td>Test Duration</td>
                             <td>
-                                <button onClick={() => setNewTime(newTime + 5)} disabled={newTime >= 60 ? true : false}><i className="far fa-plus-square"></i></button>
+                                <button tabindex={open ? "" : "-1"} onClick={() => setNewTime(newTime + 5)} disabled={newTime >= 60 ? true : false}><i className="far fa-plus-square"></i></button>
                                 {newTime} seconds
-                                <button onClick={() => setNewTime(newTime - 5)} disabled={newTime <= 5 ? true : false}><i className="far fa-minus-square"></i></button>
+                                <button tabindex={open ? "" : "-1"} onClick={() => setNewTime(newTime - 5)} disabled={newTime <= 5 ? true : false}><i className="far fa-minus-square"></i></button>
                             </td>
                         </tr>
                         <tr>
                             <td>Show non-timer stats during test</td>
-                            <td><input type="checkbox" defaultChecked="true"></input></td>
+                            <td><input tabindex={open ? "" : "-1"} type="checkbox" defaultChecked="true"></input></td>
                         </tr>
                         
                         <tr>
-                            <td><button>Reset</button></td>
-                            <td><button onClick={save}>Save</button></td>
+                            <td><button tabindex={open ? "" : "-1"}>Reset</button></td>
+                            <td><button tabindex={open ? "" : "-1"} onClick={save}>Save</button></td>
                         </tr>
                     </tbody>
                 </table>
