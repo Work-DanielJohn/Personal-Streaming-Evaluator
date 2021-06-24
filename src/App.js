@@ -26,7 +26,6 @@ const App = () => {
   // Toggle the settings menu (open / close)
   const toggleSettings = () => {
     setOpen(!settingOpen)
-    setReady(settingOpen)
   }
 
   // Timer countdown
@@ -91,6 +90,13 @@ const App = () => {
         taps={taps} reset={reset} start={start} ready={toggleReady}/>
       <Settings open={settingOpen} settings={settings}
         defaultSettings={defaultSettings} changeSettings={changeSettings}/>
+
+        <div>
+          <br></br>
+          <p>{"Ready: " + ready}</p>
+          <p>{"sOpen: " + settingOpen}</p>
+          <p>{}</p>
+        </div>
     </div>
   );
 }
