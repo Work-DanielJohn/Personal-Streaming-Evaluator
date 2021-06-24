@@ -113,7 +113,7 @@ export default Settings
 // • have a <span {conditional color for whether setting is changed} ></span>
 // this will change color to blue for changed settings, then change back to white when saved
 
-
+// Tell user that making both tap buttons the same doesn't make it count twice?
 
 // IDEAS:
 
