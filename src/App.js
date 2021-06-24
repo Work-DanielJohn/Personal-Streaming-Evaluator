@@ -13,6 +13,7 @@ const defaultSettings = {
   showStats: true,      // DEFAULT true - Show non-timer statistics (Burst only?)
 }
 
+// Settings used (can differ to default if changed by user)
 const settings = Object.create(defaultSettings)
 
 const App = () => {
@@ -75,6 +76,7 @@ const App = () => {
     if (!settingOpen) setTimeout(() => setReady(true), (1000))
   }
 
+  // Update settings used
   const changeSettings = (newSettings) => {
     settings.testTime = newSettings.time
     settings.streamFreq = newSettings.freq

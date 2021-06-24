@@ -3,6 +3,7 @@ const StatsPanel = ({ time, settings, totalTime, taps }) => {
     const averageStream = taps / timeElapsed
     const songBPM = taps / (timeElapsed) * (60 / settings.streamFreq)
 
+    // Stats can be toggled to appear/hide during the test 
     return (
         <div>
             Time remaining: {time} <br></br>

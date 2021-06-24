@@ -8,6 +8,7 @@ const Settings = ({ open, settings, defaultSettings, changeSettings }) => {
     const [replace, setReplace] = useState(0)
     // 0 = No replace | 1 = replace left key | 2 = replace right key
 
+    // Pass all changes to app for editing settings
     const save = () => {
         changeSettings({
             time: newTime,
@@ -17,6 +18,7 @@ const Settings = ({ open, settings, defaultSettings, changeSettings }) => {
         })
     }
 
+    // Change tapping key if valid
     const newKey = useCallback(
         (event) => {
             const { key } = event
@@ -28,6 +30,7 @@ const Settings = ({ open, settings, defaultSettings, changeSettings }) => {
         [replace],
     )
 
+    // Handler to check for inputs when changing keys
     useEffect(() => {
         if (replace) {
             window.addEventListener("keydown", newKey)
@@ -111,6 +114,8 @@ export default Settings
 // TO DO:
 
 // Checkbox settings do not work
+
+// Cancel change key input if settings is closed
 
 // Make reset button red when settings arent the same as default (maybe disabled if they all are)
 

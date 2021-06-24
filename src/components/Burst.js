@@ -4,6 +4,7 @@ import StatsPanel from "./StatsPanel"
 const Burst = ({ time, settings, totalTime, taps, reset, start, ready }) => {
     const [help, setHelp] = useState(false)
     
+    // Open / Close help panel
     const toggleHelp = () => {
         setHelp(!help)
         ready()
@@ -12,7 +13,8 @@ const Burst = ({ time, settings, totalTime, taps, reset, start, ready }) => {
     return (
         <div>
             <h2>Burst mode</h2>
-            { !help && 
+            { !help &&
+                // Burst mode game
                 <>
                     <button onClick={toggleHelp} disabled={start && time !== 0}>
                         Help <i className="far fa-question-circle"></i>
@@ -25,7 +27,9 @@ const Burst = ({ time, settings, totalTime, taps, reset, start, ready }) => {
                     <StatsPanel time={time} settings={settings} totalTime={totalTime} taps={taps} />
                 </>
             }
+            
             { help &&
+                // Help panel for burst mode
                 <div className="burstBox">
                     <button onClick={toggleHelp}>Back</button>
                     <div>
