@@ -47,7 +47,7 @@ const Settings = ({ open, settings, defaultSettings, changeSettings }) => {
                 <table className="settingsTable">
                     <tbody>
                         <tr>
-                            <td>Left tap: <i>{newLeft}</i></td>
+                            <td>Left tap: <i>{replace === 1 ? "Type new" : newLeft}</i></td>
                             <td>
                                 <button tabindex={open ? "" : "-1"} className={replace === 1 ? "activeSettingButton" : ""}
                                     onClick={() => setReplace(replace !== 1 ? 1 : 0)}><i className="fas fa-edit"></i>
@@ -55,7 +55,7 @@ const Settings = ({ open, settings, defaultSettings, changeSettings }) => {
                             </td>
                         </tr>
                         <tr>
-                            <td>Right tap: <i>{newRight}</i></td>  
+                            <td>Right tap: <i>{replace === 2 ? "Type new" : newRight}</i></td>  
                             <td>
                                 <button tabindex={open ? "" : "-1"} className={replace === 2 ? "activeSettingButton" : ""}
                                     onClick={() => setReplace(replace !== 2 ? 2 : 0)}><i className="fas fa-edit"></i></button>
@@ -102,9 +102,9 @@ export default Settings
 
 // TO DO:
 
-// Changing keys works but it doesn't show the user any prompts
-
 // Checkbox settings do not work
+
+// Fix game to prevent user playing when in settings, help and both menues
 
 // Make reset button red when settings arent the same as default (maybe disabled if they all are)
 
