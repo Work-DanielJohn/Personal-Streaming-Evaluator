@@ -14,8 +14,12 @@ const Burst = ({ time, settings, totalTime, taps, reset, start, ready }) => {
             <h2>Burst mode</h2>
             { !help && 
                 <>
-                    <button onClick={toggleHelp} disabled={start && time !== 0}> Help <i className="far fa-question-circle"></i> </button>
-                    <button onClick={reset} disabled={time === totalTime}>Reset <i className="fas fa-undo"></i> </button>
+                    <button onClick={toggleHelp} disabled={start && time !== 0}>
+                        Help <i className="far fa-question-circle"></i>
+                    </button>
+                    <button onClick={reset} disabled={time === totalTime}>
+                        Reset <i className="fas fa-undo"></i>
+                    </button>
                     {!start && <p>Press {settings.leftKey} or {settings.rightKey} to start! </p>}
                     <br></br>
                     <StatsPanel time={time} settings={settings} totalTime={totalTime} taps={taps} />
@@ -26,15 +30,18 @@ const Burst = ({ time, settings, totalTime, taps, reset, start, ready }) => {
                     <button onClick={toggleHelp}>Back</button>
                     <div>
                         <p>
-                            Press the <b>{settings.leftKey}</b> and <b>{settings.rightKey}</b> buttons as fast as you can! <br></br>
+                            Press the <b>{settings.leftKey}</b> and <b>{settings.rightKey}</b> buttons as fast as you can!
+                            <br></br>
                             You have <b>{totalTime}</b> seconds to test your streaming speed. <br></br>
                             <br></br>
-                            The test <b>duration</b> and tapping <b>keys</b> can be customised in the <b>settings</b> menu. <br></br>
+                            The test <b>duration</b> and tapping <b>keys</b> can be customised in the <b>settings</b> menu.
+                            <br></br>
                             <br></br>
                             <i>Longer tests may generate more accurate results, <br></br>
                             but it can also exhause your stamina.</i> <br></br>
                             <br></br>
-                            <span className="underline">Your streaming statistics will be displayed during and after the test:</span> <br></br>
+                            <span className="underline">Your streaming statistics will be displayed during and after the test:</span>
+                            <br></br>
                         </p>
                         <table className="burstTable">
                             <tbody>

@@ -18,6 +18,4 @@ const StatsPanel = ({ time, settings, totalTime, taps }) => {
     )
 }
 
-// Average streaming speed: {taps / ((totalTime - time) === 0 ? 1 : (totalTime - time))}
-
 export default StatsPanel

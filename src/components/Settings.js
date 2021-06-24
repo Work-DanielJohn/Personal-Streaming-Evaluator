@@ -64,9 +64,13 @@ const Settings = ({ open, settings, defaultSettings, changeSettings }) => {
                         <tr> 
                             <td>Streaming<br></br>frequency<br></br><small>( Recommended: 4 )</small></td>
                             <td>
-                                <button tabIndex={open ? "" : "-1"} onClick={() => setNewFreq(newFreq * 2)} disabled={newFreq >= 32 ? true : false}><i className="far fa-plus-square"></i></button>
+                                <button tabIndex={open ? "" : "-1"} onClick={() => setNewFreq(newFreq * 2)}
+                                    disabled={newFreq >= 32 ? true : false}><i className="far fa-plus-square"></i>
+                                </button>
                                 {newFreq} tap{newFreq >= 2 ? "s" : ""} <br></br> per quaver
-                                <button tabIndex={open ? "" : "-1"} onClick={() => setNewFreq(newFreq / 2)} disabled={newFreq <= 1 ? true : false}><i className="far fa-minus-square"></i></button>
+                                <button tabIndex={open ? "" : "-1"} onClick={() => setNewFreq(newFreq / 2)}
+                                    disabled={newFreq <= 1 ? true : false}><i className="far fa-minus-square"></i>
+                                </button>
                             </td>
                         </tr>
                     </tbody>
@@ -77,9 +81,13 @@ const Settings = ({ open, settings, defaultSettings, changeSettings }) => {
                         <tr>
                             <td>Test Duration</td>
                             <td>
-                                <button tabIndex={open ? "" : "-1"} onClick={() => setNewTime(newTime + 5)} disabled={newTime >= 60 ? true : false}><i className="far fa-plus-square"></i></button>
+                                <button tabIndex={open ? "" : "-1"} onClick={() => setNewTime(newTime + 5)}
+                                    disabled={newTime >= 60 ? true : false}><i className="far fa-plus-square"></i>
+                                </button>
                                 {newTime} seconds
-                                <button tabIndex={open ? "" : "-1"} onClick={() => setNewTime(newTime - 5)} disabled={newTime <= 5 ? true : false}><i className="far fa-minus-square"></i></button>
+                                <button tabIndex={open ? "" : "-1"} onClick={() => setNewTime(newTime - 5)}
+                                    disabled={newTime <= 5 ? true : false}><i className="far fa-minus-square"></i>
+                                </button>
                             </td>
                         </tr>
                         <tr>
