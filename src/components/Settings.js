@@ -104,8 +104,6 @@ export default Settings
 
 // Checkbox settings do not work
 
-// Fix game to prevent user playing when in settings, help and both menues
-
 // Make reset button red when settings arent the same as default (maybe disabled if they all are)
 
 // • Fix Help description to be dynamic --> 'stats will be shown "before and after" the test' should depend on settings
