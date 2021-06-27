@@ -73,7 +73,7 @@ const App = () => {
 
     // The test will reset in 1 second - a workaround that I may improve later
     setTimeout(() => setTimer(settings.testTime), (1000))
-    if (!settingOpen) setTimeout(() => setReady(true), (1000))
+    setTimeout(() => setReady(true), (1000))
   }
 
   // Update settings used
@@ -93,12 +93,15 @@ const App = () => {
       <Settings open={settingOpen} settings={settings}
         defaultSettings={defaultSettings} changeSettings={changeSettings}/>
 
-        <div>
-          <br></br>
-          <p>{"Ready: " + ready}</p>
-          <p>{"sOpen: " + settingOpen}</p>
-          <p>{}</p>
-        </div>
+        {(0 === 1) && 
+        <>
+          <div>
+            <br></br>
+            <p>{"Ready: " + ready}</p>
+            <p>{"sOpen: " + settingOpen}</p>
+            <p>{}</p>
+          </div>
+        </>}
     </div>
   );
 }
