@@ -82,6 +82,7 @@ const App = () => {
     settings.streamFreq = newSettings.freq
     settings.leftKey = newSettings.left
     settings.rightKey = newSettings.right
+    settings.showStats = newSettings.stats
     reset()
   }
 

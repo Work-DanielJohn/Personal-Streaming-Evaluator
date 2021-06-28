@@ -5,6 +5,7 @@ const Settings = ({ open, settings, defaultSettings, changeSettings }) => {
     const [newFreq, setNewFreq] = useState(settings.streamFreq)
     const [newLeft, setNewLeft] = useState(settings.leftKey)
     const [newRight, setNewRight] = useState(settings.rightKey)
+    const [newStats, setStats] = useState(settings.showStats)
     const [replace, setReplace] = useState(0)
     // 0 = No replace | 1 = replace left key | 2 = replace right key
 
@@ -14,7 +15,8 @@ const Settings = ({ open, settings, defaultSettings, changeSettings }) => {
             time: newTime,
             freq: newFreq,
             left: newLeft,
-            right: newRight
+            right: newRight,
+            stats: newStats
         })
     }
 
@@ -53,7 +55,7 @@ const Settings = ({ open, settings, defaultSettings, changeSettings }) => {
                             <td>Left tap: <i>{replace === 1 ? "Type new" : newLeft}</i></td>
                             <td>
                                 <button tabIndex={open ? "" : "-1"} className={replace === 1 ? "activeSettingButton" : ""}
-                                    onClick={() => setReplace(replace !== 1 ? 1 : 0)}><i className="fas fa-edit"></i>
+                                    onClick={() => setReplace(replace !== 1 ? 1 : 0)}>Edit <i className="fas fa-edit"></i>
                                 </button>
                             </td>
                         </tr>
@@ -61,18 +63,18 @@ const Settings = ({ open, settings, defaultSettings, changeSettings }) => {
                             <td>Right tap: <i>{replace === 2 ? "Type new" : newRight}</i></td>  
                             <td>
                                 <button tabIndex={open ? "" : "-1"} className={replace === 2 ? "activeSettingButton" : ""}
-                                    onClick={() => setReplace(replace !== 2 ? 2 : 0)}><i className="fas fa-edit"></i></button>
+                                    onClick={() => setReplace(replace !== 2 ? 2 : 0)}>Edit <i className="fas fa-edit"></i></button>
                             </td>
                         </tr>
                         <tr> 
                             <td>Streaming<br></br>frequency<br></br><small>( Recommended: 4 )</small></td>
                             <td>
                                 <button tabIndex={open ? "" : "-1"} onClick={() => setNewFreq(newFreq * 2)}
-                                    disabled={newFreq >= 32 ? true : false}><i className="far fa-plus-square"></i>
+                                    disabled={newFreq >= 32 ? true : false}>x2
                                 </button>
                                 {newFreq} tap{newFreq >= 2 ? "s" : ""} <br></br> per quaver
                                 <button tabIndex={open ? "" : "-1"} onClick={() => setNewFreq(newFreq / 2)}
-                                    disabled={newFreq <= 1 ? true : false}><i className="far fa-minus-square"></i>
+                                    disabled={newFreq <= 1 ? true : false}>÷2
                                 </button>
                             </td>
                         </tr>
@@ -85,17 +87,20 @@ const Settings = ({ open, settings, defaultSettings, changeSettings }) => {
                             <td>Test Duration</td>
                             <td>
                                 <button tabIndex={open ? "" : "-1"} onClick={() => setNewTime(newTime + 5)}
-                                    disabled={newTime >= 60 ? true : false}><i className="far fa-plus-square"></i>
+                                    disabled={newTime >= 60 ? true : false}>+5
                                 </button>
                                 {newTime} seconds
                                 <button tabIndex={open ? "" : "-1"} onClick={() => setNewTime(newTime - 5)}
-                                    disabled={newTime <= 5 ? true : false}><i className="far fa-minus-square"></i>
+                                    disabled={newTime <= 5 ? true : false}>-5
                                 </button>
                             </td>
                         </tr>
                         <tr>
                             <td>Show non-timer stats during test</td>
-                            <td><input tabIndex={open ? "" : "-1"} type="checkbox" defaultChecked="true"></input></td>
+                            <td>
+                                <button tabIndex={open ? "" : "-1"} onClick={() => setStats(!newStats)}>
+                                {newStats ? "On" : "Off"}</button>
+                            </td>
                         </tr>
                         
                         <tr>
