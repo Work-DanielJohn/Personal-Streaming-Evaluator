@@ -1,7 +1,7 @@
 const Header = ({ toggle, settingOpen}) => {
     return (
         <header>
-            <button title="Streaming Modes"><i className="fas fa-2x fa-gamepad"></i></button>
+            <button title="Streaming Modes"><i className="fab fa-2x fa-github"></i></button>
             
             <h1 title="Tap those Beats!">
                 PERS<span>O</span>NAL <span>

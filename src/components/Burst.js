@@ -41,9 +41,9 @@ const Burst = ({ time, settings, totalTime, taps, reset, start, ready }) => {
                             The test <b>duration</b> and tapping <b>keys</b> can be customised in the <b>settings</b> menu.
                             <br></br>
                             <br></br>
-                            <span className="underline">Your streaming statistics will be displayed during and after the test:</span>
+                            <span className="underline">Your streaming statistics will be displayed during
+                                {settings.showStats ? "and after" : ""} the test:</span>
                             <br></br>
-                            
                         </p>
                         <table className="burstTable">
                             <tbody>

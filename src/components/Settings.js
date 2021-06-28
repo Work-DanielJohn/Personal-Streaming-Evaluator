@@ -127,8 +127,6 @@ export default Settings
 
 // TO DO:
 
-// Checkbox settings do not work
-
 // Cancel change key input if settings is closed
 
 // Make reset button red when settings arent the same as default (maybe disabled if they all are)
@@ -137,8 +135,6 @@ export default Settings
 
 // • have a <span {conditional color for whether setting is changed} ></span>
 // this will change color to blue for changed settings, then change back to white when saved
-
-// Tell user that making both tap buttons the same doesn't make it count twice?
 
 // Add pb and improvement since last test in stats panel?
 
