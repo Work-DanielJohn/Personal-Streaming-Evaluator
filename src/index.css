@@ -145,6 +145,16 @@ Header .buttonOn {
     border-color: white;
 }
 
+input[type="checkbox"] {
+    width: 30px;
+    height: 30px;
+}
+
+input[type="checkbox"]:hover {
+    width: 35px;
+    height: 35px;
+}
+
 .underline {
 	text-decoration: underline;
 }
