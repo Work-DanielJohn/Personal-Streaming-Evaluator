@@ -31,9 +31,9 @@ const App = () => {
 
   // Timer countdown
   useEffect(() => {
-    if (timer > 0 &&                                                  // When timer hasn't run out
-    start === true) {                                                 // When test has started
-      setTimeout(() => setTimer(timer - 1), (1000))}                  // Function to count down
+    if (timer > 0 &&                                    // When timer hasn't run out
+    start === true) {                                   // When test has started
+      setTimeout(() => setTimer(timer - 1), (1000))}    // Function to count down
   }, [timer, start])
   
   // Add tap
