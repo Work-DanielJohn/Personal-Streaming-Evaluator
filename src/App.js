@@ -93,16 +93,6 @@ const App = () => {
         taps={taps} reset={reset} start={start} ready={toggleReady}/>
       <Settings open={settingOpen} settings={settings}
         defaultSettings={defaultSettings} changeSettings={changeSettings}/>
-
-        {(0 === 1) && 
-        <>
-          <div>
-            <br></br>
-            <p>{"Ready: " + ready}</p>
-            <p>{"sOpen: " + settingOpen}</p>
-            <p>{}</p>
-          </div>
-        </>}
     </div>
   );
 }
