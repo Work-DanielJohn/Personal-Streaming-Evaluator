@@ -145,18 +145,27 @@ Header .buttonOn {
     border-color: white;
 }
 
-input[type="checkbox"] {
-    width: 30px;
-    height: 30px;
-}
-
-input[type="checkbox"]:hover {
-    width: 35px;
-    height: 35px;
-}
-
 .underline {
 	text-decoration: underline;
+}
+
+.burstButton {
+    background-color: var(--light-green);
+    border-color: var(--dark-green);
+    border-radius: 10px;
+    transition: 0.1s;
+    margin: 2px;
+}
+
+.burstButton:hover {
+    font-weight: bold;
+    background-color: var(--light-green);
+    border-color: white;    
+}
+
+.burstButton:hover:disabled {
+    font-weight: normal;
+    border-color: var(--dark-green);
 }
 
 .burstBox {
@@ -178,6 +187,7 @@ input[type="checkbox"]:hover {
 
 .burstTable tbody tr td {
 	border: 2px solid black;
+    margin: 2px;
 }
 
 .burstTable tr, td {

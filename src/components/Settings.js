@@ -5,7 +5,7 @@ const Settings = ({ open, settings, defaultSettings, changeSettings }) => {
     const [newFreq, setNewFreq] = useState(settings.streamFreq)
     const [newLeft, setNewLeft] = useState(settings.leftKey)
     const [newRight, setNewRight] = useState(settings.rightKey)
-    const [newStats, setStats] = useState(settings.showStats)
+    const [newStats, setNewStats] = useState(settings.showStats)
     const [replace, setReplace] = useState(0)
     // 0 = No replace | 1 = replace left key | 2 = replace right key
 
@@ -18,6 +18,14 @@ const Settings = ({ open, settings, defaultSettings, changeSettings }) => {
             right: newRight,
             stats: newStats
         })
+    }
+
+    const setDefault = () => {
+        setNewTime(defaultSettings.testTime)
+        setNewFreq(defaultSettings.streamFreq)
+        setNewLeft(defaultSettings.leftKey)
+        setNewRight(defaultSettings.rightKey)
+        setNewStats(defaultSettings.showStats)
     }
 
     // Change tapping key if valid
@@ -98,14 +106,15 @@ const Settings = ({ open, settings, defaultSettings, changeSettings }) => {
                         <tr>
                             <td>Show non-timer stats during test</td>
                             <td>
-                                <button tabIndex={open ? "" : "-1"} onClick={() => setStats(!newStats)}>
+                                <button tabIndex={open ? "" : "-1"} onClick={() => setNewStats(!newStats)}>
                                 {newStats ? "On" : "Off"}</button>
                             </td>
                         </tr>
-                        
                         <tr>
-                            <td><button tabIndex={open ? "" : "-1"}>Reset</button></td>
-                            <td><button tabIndex={open ? "" : "-1"} onClick={save}>Save</button></td>
+                            <td><button tabIndex={open ? "" : "-1"} onClick={setDefault} 
+                                title="Reset settings to default">Default</button></td>
+                            <td><button tabIndex={open ? "" : "-1"} onClick={save}
+                                title="Save settings">Save</button></td>
                         </tr>
                     </tbody>
                 </table>
@@ -130,6 +139,8 @@ export default Settings
 // this will change color to blue for changed settings, then change back to white when saved
 
 // Tell user that making both tap buttons the same doesn't make it count twice?
+
+// Add pb and improvement since last test in stats panel?
 
 // IDEAS:
 
